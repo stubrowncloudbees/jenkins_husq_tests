@@ -21,10 +21,11 @@ spec:
 ) {
     node("kubernetes") {
         container("docker") {
+            checkout scm
             stage("something") {
-                sh "pwd"
-                sh "ls -lart"
-                sh "docker build -t stuimage:123 ./Dockerfile"
+                
+                sh "docker version"
+                sh "docker build ."
             }
         }
     }
