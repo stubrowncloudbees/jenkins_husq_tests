@@ -22,7 +22,7 @@ spec:
     node("kubernetes") {
         container("docker") {
             stage("something") {
-                sh "docker version"
+                sh "docker build ."
             }
         }
     }
