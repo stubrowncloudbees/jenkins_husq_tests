@@ -22,6 +22,8 @@ spec:
     node("kubernetes") {
         container("docker") {
             stage("something") {
+                sh "pwd"
+                sh "ls -lart"
                 sh "docker build -t stuimage:123 ./Dockerfile"
             }
         }
