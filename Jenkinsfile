@@ -19,11 +19,10 @@ spec:
       type: Socket
 """
 ) {
-    agent("kubernetes") {
-        node("docker") {
+    node("kubernetes") {
+        container("docker") {
             stage("something") {
                 sh "docker version"
-                
             }
         }
     }
