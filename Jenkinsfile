@@ -27,7 +27,8 @@ spec:
    
                 sh 'docker login -p ${PASSWORD} -u ${USER}' 
                 sh "docker version"
-                sh "docker build ."
+                sh "cd upr-reporter/upr-reporter && docker build ."
+                sh "pwd"
                }
             }
         }
