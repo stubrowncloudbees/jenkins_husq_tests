@@ -23,9 +23,12 @@ spec:
         container("docker") {
             checkout scm
             stage("something") {
-                
+               withCredentials([usernamePassword(credentialsId: 'dockerhubstu', passwordVariable: 'PASSWORD', usernameVariable: 'USER')]) {
+   
+                sh 'docker login -p ${PASSWORD} -u ${USER}' 
                 sh "docker version"
                 sh "docker build ."
+               }
             }
         }
     }
